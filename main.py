@@ -27,7 +27,7 @@ class DailyDocs(AddOn):
         ).isoformat() + "Z"
 
         # Load the cURL command from environment variable
-        curl_command = os.environ.get("CLOUDFLARE_GRAPHQL_CURL")
+        curl_command = os.environ.get("TOKEN")
         if not curl_command:
             raise ValueError("CLOUDFLARE_GRAPHQL_CURL environment variable is not set.")
 
