@@ -33,7 +33,9 @@ class DailyDocs(AddOn):
 
         # Replace the start time
         curl_command = re.sub(
-            r'"\$start":\s*"\$start"', f'"$start": "{start_time}"', curl_command
+            r'("start"\s*:\s*")\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z(")',
+            rf'\1{start_time}\2',
+            curl_command
         )
 
         # Run the cURL command and capture output
