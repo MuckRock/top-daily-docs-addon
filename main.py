@@ -33,10 +33,11 @@ class DailyDocs(AddOn):
 
         # Replace the start time
         curl_command = re.sub(
-            r'("start"\s*:\s*")\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z(")',
-            rf'\1{start_time}\2',
+            r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z',
+            start_time,
             curl_command
         )
+
 
         # Run the cURL command and capture output
         result = subprocess.run(
