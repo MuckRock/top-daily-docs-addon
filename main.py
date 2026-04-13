@@ -78,6 +78,7 @@ class DailyDocs(AddOn):
 
     def main(self):
         """The main add-on functionality goes here."""
+        self.client.session.headers.update({'User-Agent': 'Top Daily Documents Add-On'})
         data = self.fetch_graphql_data()
         top_links = self.process_data(data)
 
